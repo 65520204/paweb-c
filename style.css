@@ -1,0 +1,981 @@
+/* importation de la police "Poppins" a partir de site google font */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,
+::after,
+::before{
+    padding: 0px;
+    margin:0px;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-thumb{
+    background: rgb(0, 0, 207);
+    border-radius: 10px;
+    margin-right: 3px;
+    cursor: pointer;
+  }
+  ::-webkit-scrollbar-track {  
+    background: #f1f1f1; 
+  } 
+  html{
+    scroll-behavior: smooth;
+  }
+
+/* style de la barre de navigation */
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header nav{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.9);
+}
+
+/* style de la partie logo */
+header nav .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+header nav .logo img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    object-fit: cover;
+    margin-right: 5px;
+}
+
+header nav .logo h2{
+    color: rgb(0, 0, 207);
+}
+
+/* style de la partie lien de la barre de navigation */
+header nav ul{
+    display: flex;
+    list-style: none;
+    
+}
+
+header nav ul li{
+    margin-left: 30px;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    font-weight: 600;
+    color: #000;
+}
+
+header nav ul li a:hover{
+    color: rgb(0, 0, 207);
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+/* style de bouton suivez-nous */
+header nav button{
+    height: 35px;
+    width: 12%;
+    /* padding: 7px 25px; */
+    border: 0px;
+    color: #fff;
+    background: rgb(0, 0, 207);
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+header nav button:hover{
+    transition: .3s ;
+    border: 1px solid rgb(0, 0, 207);
+    background: transparent;
+    color: rgb(0, 0, 207);
+    cursor: pointer;
+}
+
+/* style hamburger */
+header nav .hamburger{
+    display: none;
+}
+
+/* ================================================================================================ */
+/* =======================STYLE DU PREMIER SECTION DE LIEN ACCUEIL================================= */
+/* ================================================================================================ */
+
+.first-section{
+    width: 100%;
+    height: 90vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 207, 0.774)),url(img/bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.first-section h1{
+    text-align: center;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.first-section h1 span{
+    color: #389e7a;
+}
+
+.first-section button{
+    width: 20%;
+    height: 8vh;
+    margin-top: 30px;
+    background: #389e7a;
+    font-weight: 500;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.first-section button:hover{
+    transition: .3s;
+    cursor: pointer;
+    background: #2a795d;
+}
+
+.first-section button a{
+    color: #fff;
+    text-decoration: none;
+}
+
+/* 
+    =====================================================================================
+    ==================== ANIMATION D'APPARITION DES ELEMENTS ============================ 
+    =====================================================================================
+*/
+
+/* ======= style d'apparition des elements qui viennent a gauche vers a droite =======*/
+.left-right{
+    width: 50%;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+/* Apparition de l'element */
+.left-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  /* Disparition de l'element */
+.left-right.hidden {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+
+/* ======= style d'apparition des elements qui viennent a droite vers a gauche =======*/
+.right-left{
+    width: -50%;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity .6s ease, transform .6s ease;
+}
+/* Apparition de l'element */
+.right-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  /* Disparition de l'element */
+.right-left.hidden {
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+
+/* ======= style d'apparition des elements qui viennent en haut vers en bas =======*/
+.top-bottom{
+    width: 50%;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity .6s ease, transform .6s ease;
+}
+/* Apparition de l'element */
+.top-bottom.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Disparition de l'element */
+.top-bottom.hidden {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+
+/* ======= style d'apparition des elements qui viennent en haut vers en bas =======*/
+.bottom-top{
+    width: -50%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity .6s ease, transform .6s ease;
+}
+/* Apparition de l'element */
+.bottom-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Disparition de l'element */
+.bottom-top.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+/* ================================ STYLE DE COOKIE NOTIFICATION ===================================== */
+.cookie-notification{
+    width: 25%;
+    font-size: small;
+    padding:10px;
+    text-align: justify;
+    background: #ffffff5c;
+    border-radius: 3px;
+    position: fixed;
+    right: 3%;
+    bottom: 5%;
+    float: right;
+    backdrop-filter: blur(20px);
+    z-index: 5;
+    opacity: 0;
+    transform: translateX(30%);
+    transition: opacity 2s ease, transform 2s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+
+.cookie-notification .cookie-btns{
+    float: right;
+    display: flex;
+}
+.cookie-notification .cookie-btns button{
+    font-size: 12px;
+    margin-right: 10px;
+    padding: 2px 5px;
+    border: 1px solid rgba(0, 0, 207, 0.774);
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background: transparent;
+}
+
+.cookie-notification .cookie-btns button:first-child:hover{
+    background: rgba(0, 0, 207, 0.774);
+    transition: .5s;
+    color: #fff;
+}
+.cookie-notification .cookie-btns button:last-child{
+    border: 1px solid crimson;
+    background: crimson;
+    color: #fff;
+}
+
+.cookie-notification .cookie-btns button:last-child:hover{
+    background: rgb(177, 11, 44);
+    transition: .5s;
+}
+
+
+
+/* 
+    =====================================================================================
+    ========================== STYLE DEUXIEME SECTION =================================== 
+    =====================================================================================
+*/
+.second-section{
+    width: 100%;
+    height: 100vh;
+    padding: 3% 5%;
+    text-align: center;
+    background: #EBF2FA;
+}
+
+.second-section h2{
+    margin-bottom: 30px;
+    color: #389e7a;
+}
+
+.second-section .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.second-section .container .left{
+    margin-left: 5%;
+    width: 50%;
+    text-align: justify;
+    height: 70vh;
+}
+
+.second-section .container .left p{
+    margin-top: 30px;
+}
+
+.second-section .container .right{
+    width: 50%;
+    height: 70vh;
+    overflow: hidden;
+}
+.second-section .container .right img{
+    width: 400px;
+    height: 50vh;
+    margin-bottom: 10%;
+    object-fit: cover;
+}
+
+/* 
+    =====================================================================================
+    ========================== STYLE TROISIEME SECTION =================================== 
+    =====================================================================================
+*/
+.third-section{
+    width: 100%;
+    height: 100vh;
+    padding: 3% 5%;
+    text-align: center;
+    background: #fff;
+}
+.third-section h2{
+    margin-bottom: 30px;
+    color: #389e7a;
+}
+.third-section .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.third-section .container .left{
+    width: 50%;
+    height: 70vh;
+    overflow: hidden;
+}
+.third-section .container .left img{
+    width: 400px;
+    height: 50vh;
+    margin-bottom: 10%;
+    object-fit: cover;
+}
+
+.third-section .container .right{
+    width: 50%;
+    height: 70vh;
+    padding-right: 5%;
+    text-align: justify;
+}
+
+.third-section .container .right h3{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.third-section .container .right ul{
+    list-style: none;
+}
+.third-section .container .right ul li{
+    margin-top: 5px;
+}
+.third-section .container .right ul li i{
+    margin-right: 10px;
+    color: #389e7a;
+}
+
+/* 
+    =====================================================================================
+    ========================== STYLE QUATRIEME SECTION =================================== 
+    =====================================================================================
+*/
+.fourth-section{
+    width: 100%;
+    height: 100vh;
+    padding: 3% 5%;
+    text-align: center;
+    background: #EBF2FA;
+}
+.fourth-section h2{
+    margin-bottom: 30px;
+    color: #389e7a;
+}
+.fourth-section p{
+    margin-bottom: 20px;
+}
+.fourth-section .cont-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.fourth-section .cont-form .container{
+    width: 30%;
+    height: 30vh;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    overflow: hidden;
+    padding-left: 30px;
+}
+.fourth-section .cont-form .container:hover{
+    transform: scale(1.02);
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+.fourth-section .cont-form .container h3{
+    text-align: center;
+}
+
+/* 
+    =====================================================================================
+    ========================== STYLE CINQIEME SECTION =================================== 
+    =====================================================================================
+*/
+.fiveth-section{
+    width: 100%;
+    height: auto;
+    padding: 3% 5%;
+    text-align: center;
+    background: #fff;
+}
+.fiveth-section h2{
+    margin-bottom: 30px;
+    color: #389e7a;
+}
+.fiveth-section p{
+    margin-bottom: 20px;
+}
+.fiveth-section .cont-chiffre{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.fiveth-section .cont-chiffre .box{
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 8px;
+    color: #fff;
+    background: #389e7a;
+}
+.fiveth-section .cont-chiffre .box:hover{
+    background: #2a795d;
+    cursor: pointer;
+    transition: .3s;
+}
+.fiveth-section .cont-commentaire{
+    width: 100%;
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.fiveth-section .cont-commentaire .commentaire{
+    width: 40%;
+    height: 30vh;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    overflow: hidden;
+    background: #EBF2FA;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+.fiveth-section .cont-commentaire .commentaire:hover{
+    transform: scale(1.02);
+    transition: .3s ease;
+    cursor: pointer;
+}
+.fiveth-section .cont-commentaire .commentaire .profil{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+}
+.fiveth-section .cont-commentaire .commentaire .profil img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    object-fit: cover;
+    padding: 2px;
+    margin-right: 5px;
+    border: 1px solid #389e7a;
+}
+
+.fiveth-section .cont-commentaire .commentaire .text{
+    text-align: left;
+    margin-top: 10%;
+    font-size: 14px;
+}
+
+.fiveth-section .cont-commentaire .commentaire .date{
+    float: right;
+    font-size: 14px;
+    color: #8c8989;
+}
+
+
+
+/* 
+    =====================================================================================
+    ========================== STYLE SIXIEME SECTION =================================== 
+    =====================================================================================
+*/
+.sixth-section{
+    width: 100%;
+    height: 80vh;
+    padding: 3% 5%;
+    text-align: center;
+    background: #EBF2FA;
+}
+
+.sixth-section h2{
+    margin-bottom: 30px;
+    color: #389e7a;
+}
+
+.sixth-section .container .slider-wrapper{
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0px 70px;
+}
+
+.sixth-section .container .card-list .card-item{
+    user-select: none;
+    padding: 20px 10PX;
+    background-color: #389e7a;
+    border: 1px solid #FFF;
+    border-radius: 8px;
+    color: #fff;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(20px);
+}
+
+.sixth-section .container .card-list .card-item .user-image{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid #FFF;
+    padding: 2px;
+    margin-bottom: 10px;
+}
+
+.sixth-section .container .card-list .card-item .user-profession{
+    color: #e3e3e3;
+    font-weight: 500;
+}
+.sixth-section .container .card-list .card-item .socio-media{
+    margin: 10px 0px;
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.sixth-section .container .card-list .card-item .socio-media a{
+    color: #fff;
+    font-size: 20px;
+    margin: 3px 10px;
+    border-radius: 50%;
+}
+
+.sixth-section .container .card-list .card-item .socio-media a:hover{
+    transition: .5s;
+    color: #e3e3e3;
+    transform: rotate(15deg);
+}
+
+.sixth-section .container .slider-wrapper .swiper-pagination-bullet {
+    background: #fff;
+    height: 15px;
+    width: 15px;
+}
+
+.sixth-section .container .slider-wrapper .slider-wrapper-button{
+    color: #389e7a;
+}
+.sixth-section .container .slider-wrapper .slider-wrapper-button:hover{
+    color: #2a795d;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:760px){ 
+    .sixth-section .container .slider-wrapper{
+        margin: 0px 40px;
+    }
+    .sixth-section .container .slider-wrapper .slider-wrapper-button{
+        display: none;
+    }
+}   
+
+
+/* 
+    =======================================================================================================================
+    =============================================== RESPONSIVE ============================================================
+    =======================================================================================================================
+*/
+
+/* responsive pour les tablettes */
+@media screen and (max-width: 768px){
+    /* style de la barre de navigation */
+
+    header{
+        width: 100%;
+    }
+    header nav{
+        padding: 0;
+        z-index: 20;
+        align-items: center;
+    }
+
+    /* style hamburger */
+    header nav .hamburger{
+        width: 25px;
+        height: 25px;
+        display: block;
+        margin-right: 8%;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    header nav .hamburger .box{
+        width: 100%;
+        height: 3px;
+        background: #000000;
+        margin-top: 3px;
+        border-radius: 5px;
+        transition: .5s;
+    }
+    header nav .hamburger.active .box:nth-child(1){
+        display: none;
+    }
+    header nav .hamburger.active .box:nth-child(2){
+        position: relative;
+        transform: rotate(45deg);
+    }
+    header nav .hamburger.active .box:nth-child(3){
+        position: relative;
+        top: -20%;
+        transform: rotate(-45deg);
+    }
+    header nav .logo img{
+        width: 35px;
+        height: 35px;
+        margin-left: 15px;
+    }
+    header nav .logo h2{
+        display: none;
+    }
+    header nav .menu{
+        height: 70vh;
+        position: absolute;
+        flex-direction: column;      
+        width: 100%;
+        padding: 15px;  
+        background: #b9b8b892;
+        backdrop-filter: blur(10px);
+        top: 10%;
+        z-index: -5;
+        margin-left: -100%;
+        transition: .5s;
+    }
+    header nav .menu.active{
+        margin-left: 0%;
+    }
+    header nav ul li{
+        margin-top: 10px;
+    }
+    header nav ul li a{
+        font-size: 1rem;
+    }
+
+    /* style de bouton suivez-nous */
+    header nav .suivre-btn{
+        width: 20%;
+        position: absolute;
+        margin-top: 8%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        justify-content: center;
+        margin-left: -100%;
+        transition: .5s;
+    }
+    header nav .suivre-btn.active{
+        margin-left: 0%;
+    }
+
+
+    /* =======================STYLE DU PREMIER SECTION DE LIEN ACCUEIL================================= */
+
+    .first-section h1{
+        font-size: 1.8rem;
+    }
+
+    .first-section button{
+        width: 50%;
+    }
+    /* ================================ STYLE DE COOKIE NOTIFICATION ===================================== */
+    .cookie-notification{
+        width: 45%;
+        right: 10%;
+        bottom: 8%;
+    }
+    .cookie-notification .cookie-btns{
+        margin-top: 10px;
+    }
+
+    /*========================== STYLE DEUXIEME SECTION =================================== */
+
+    .second-section{
+        height: auto;
+        padding: 3% 12%;
+    }
+    .second-section .container{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .second-section .container .left{
+        width: 100%;
+        height: auto;
+    }
+    .second-section .container .right{
+        width: 100%;
+    }
+    .second-section .container .right img{
+        height: 100%; 
+    }
+    /* 
+    ========================== STYLE TROISIEME SECTION =================================== 
+    */
+    .third-section{
+        height: auto;
+        padding: 3% 8%;
+    }
+    .third-section .container{
+        flex-direction: column;
+    }
+    .third-section .container .left{
+        width: 100%;
+        overflow: visible;
+        margin-bottom: 5%;
+    }
+    .third-section .container .left img{
+        height: 100%;
+    }
+
+    .third-section .container .right{
+        width: 100%;
+        margin-left: 10%;
+    }
+    /* 
+    =====================================================================================
+    ========================== STYLE QUATRIEME SECTION =================================== 
+    =====================================================================================
+    */
+    .fourth-section{
+        height: auto;
+        padding: 3% 2%;
+    }
+    .fourth-section p{
+        margin-bottom: 15px;
+    }
+    .fourth-section .cont-form .container{
+        width: 45%;
+        height: 38vh;
+        margin: 5px;
+    }
+
+    .fourth-section .cont-form .container h3{
+        margin-bottom: 5px;
+    }
+    /* 
+    ========================== STYLE CINQIEME SECTION =================================== 
+    */
+    .fiveth-section{
+        padding: 3% 2%;
+    }
+    .fiveth-section .cont-commentaire .commentaire{
+        width: 45%;
+        height: auto;
+    }
+
+    .fiveth-section .cont-commentaire .commentaire .text{
+        margin-top: 15%;
+    }
+
+    .fiveth-section .cont-commentaire .commentaire .date{
+        margin-bottom: 0px;
+    }
+    /* 
+    ========================== STYLE SIXIEME SECTION =================================== 
+    */
+    .sixth-section{
+        width: 100%;
+        height: auto;
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* responsive pour les telephones */
+@media screen and (max-width: 480px){
+
+    /* style de bouton suivez-nous */
+    header nav .suivre-btn{
+        width: 40%;
+        
+    }
+    
+    /* =======================STYLE DU PREMIER SECTION DE LIEN ACCUEIL================================= */
+    .first-section h1{
+        font-size: 1.5rem;
+    }
+    .first-section button{
+        width: 70%;
+    }
+
+    /* ================================ STYLE DE COOKIE NOTIFICATION ===================================== */
+    .cookie-notification{
+        width: 60%;
+        right: 18%;
+    }
+
+    /*========================== STYLE DEUXIEME SECTION =================================== */
+
+    .second-section{
+        height: auto;
+        padding: 10%;
+    }
+    .second-section .container .right img{
+        width: 100%;
+    }
+    /* 
+    ========================== STYLE TROISIEME SECTION =================================== 
+    */
+    .third-section{
+        padding: 10%;
+    }
+    .third-section .container .left img{
+        width: 100%;
+    }
+
+    .third-section .container .right{
+        margin-left: 0%;
+    }
+
+
+    /* 
+    ========================== STYLE QUATRIEME SECTION =================================== 
+    */
+    .fourth-section{
+        padding: 10%;
+    }
+    .fourth-section .cont-form .container{
+        width: 90%;
+    }
+    /* 
+    ========================== STYLE CINQIEME SECTION =================================== 
+    */
+    .fiveth-section{
+        padding: 10%;
+    }
+    .fiveth-section .cont-commentaire .commentaire{
+        width: 90%;
+    }
+
+    .fiveth-section .cont-commentaire .commentaire .text{
+        margin-top: 15%;
+    }
+
+    .fiveth-section .cont-commentaire .commentaire .date{
+        margin-bottom: 0px;
+    }
+    /* 
+    ========================== STYLE SIXIEME SECTION =================================== 
+    */
+    .sixth-section{
+        width: 100%;
+        height: auto;
+    }
+}
